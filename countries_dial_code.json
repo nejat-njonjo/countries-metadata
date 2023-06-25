@@ -171,7 +171,7 @@
   { "code": "NR", "flag": "\ud83c\uddf3\ud83c\uddf7", "name": "Nauru", "dial_code": "+674" },
   { "code": "NP", "flag": "\ud83c\uddf3\ud83c\uddf5", "name": "Nepal", "dial_code": "+977" },
   { "code": "NL", "flag": "\ud83c\uddf3\ud83c\uddf1", "name": "Netherlands", "dial_code": "+31" },
-  { "code": "AN", "flag": "", "name": "Netherlands Antilles", "dial_code": "+599" },
+  { "code": "AN", "flag": "\ud83c\udde7\ud83c\uddf6", "name": "Netherlands Antilles", "dial_code": "+599" },
   { "code": "NC", "flag": "\ud83c\uddf3\ud83c\udde8", "name": "New Caledonia", "dial_code": "+687" },
   { "code": "NZ", "flag": "\ud83c\uddf3\ud83c\uddff", "name": "New Zealand", "dial_code": "+64" },
   { "code": "NI", "flag": "\ud83c\uddf3\ud83c\uddee", "name": "Nicaragua", "dial_code": "+505" },
