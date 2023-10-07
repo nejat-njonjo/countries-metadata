@@ -1,47 +1,51 @@
 import json
 from typing import List
 
-def save_list(data = [], filename=''):
+
+def load_file(filename: str) -> dict:
+    with open(f'./assets/{filename}.json', 'r', encoding='utf8') as file:
+        return json.load(file)
+
+def save_list(data: List, filename: str) -> bool:
     with open(filename, 'w', encoding='utf8') as file:
         json.dump(data, file)
     return True
 
-
-def find_in(list = [], match = '', value = ''):
-    found = None
-    for item in list:
+def find_in(data: List[dict], match: str, value: str) -> dict:
+    for item in data:
         if item[match] == value:
-            found = item
-    return found
+            return item
+    return None
+
+def process_countries(countries: List[dict], emojis: List[dict], currencies: List[dict]) -> List[dict]:
+    countries_metadata = []
+    for country in countries:
+        data = find_in(emojis, 'code', country['code'])
+        flag = data['emoji'] if data else ''
+
+        # Find currency info for the current country
+        currency_info = next((c for c in currencies if c['countryCode'] == country['code']), None)
+        currency_code = currency_info['currencyCode'] if currency_info else ''
+
+        country_info = {
+            'code': country['code'],
+            'flag': flag,
+            'name': country['name'],
+            'dial_code': country['dial_code'],
+            'currency_code': currency_code
+        }
+        countries_metadata.append(country_info)
+
+    return countries_metadata
 
 
-def load_emoji_countries() -> List:
-    with open('./emojis.json', 'r', encoding='utf8') as emojis_file:
-        return json.load(emojis_file)
+def main():
+    emojis = load_file('emojis')
+    currencies = load_file('currencies')
+    countries = load_file('CountryCodes')
 
+    countries_metadata = process_countries(countries, emojis, currencies)
+    save_list(countries_metadata, 'countries_metadata.json')
 
-emojis = load_emoji_countries()
-
-countries_dial_codes = []
-
-
-with open('CountryCodes.json', 'r', encoding='utf8') as countries_file:
-        countries = json.load(countries_file)
-        for country in countries:
-            data = find_in(emojis, 'code', country['code'])
-
-            if not data:
-                countries_dial_codes.append({
-                    'code': country['code'],
-                    'flag': '',
-                    'name': country['name'],
-                    'dial_code': country['dial_code']
-                })
-            else:
-                countries_dial_codes.append({
-                    'code': country['code'],
-                    'flag': data['emoji'],
-                    'name': country['name'],
-                    'dial_code': country['dial_code']
-                })
-        save_list(countries_dial_codes, 'countries_dial_code.json')
+if __name__ == '__main__':
+    main()
