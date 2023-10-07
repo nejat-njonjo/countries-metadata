@@ -29,14 +29,15 @@ def process_countries(countries: List[dict], emojis: List[dict], currencies: Lis
 
             # Find currency info for the current country
             currency_info = next((c for c in currencies if c['countryCode'] == country.get('code')), None)
-            currency_code = currency_info['currencyCode'] if currency_info else ''
 
             country_info = {
                 'code': country['code'],
                 'flag': flag,
                 'name': country['name'],
                 'dial_code': country['dial_code'],
-                'currency_code': currency_code
+                'currency_code': currency_info['currencyCode'] if currency_info else '',
+                'continent': currency_info.get('continentName') if currency_info  else '',
+                'capital': currency_info['capital'] if currency_info else ''
             }
             countries_metadata.append(country_info)
         except KeyError as e:
