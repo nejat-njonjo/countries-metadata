@@ -45,6 +45,7 @@ def process_countries(countries: List[dict], emojis: List[dict], currencies: Lis
 
     return countries_metadata
 
+
 def main():
     # Load data from JSON files
     emojis = load_json('emojis')
@@ -54,6 +55,7 @@ def main():
     # Process countries and save metadata
     countries_metadata = process_countries(countries, emojis, currencies)
     save_to_json(countries_metadata, 'countries_metadata.json')
+
 
 if __name__ == '__main__':
     main()
