@@ -1,6 +1,6 @@
 {
   "name": "countries_metadata",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "List of countries containing country code, currency, dial code, continent, capital, and flags.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
