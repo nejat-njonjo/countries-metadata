@@ -1,0 +1,41 @@
+{
+  "name": "countries_metadata",
+  "version": "0.0.1",
+  "description": "List of countries containing country code, currency, dial code, continent, capital, and flags.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nejat-njonjo/countries_metadata.git"
+  },
+  "keywords": [
+    "Countries",
+    "continents",
+    "dial",
+    "code",
+    "country",
+    "dial",
+    "code",
+    "country",
+    "name"
+  ],
+  "author": "Nejat Mhango",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nejat-njonjo/countries_metadata/issues"
+  },
+  "homepage": "https://github.com/nejat-njonjo/countries_metadata#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
+  }
+}
