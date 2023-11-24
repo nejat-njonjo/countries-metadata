@@ -31,7 +31,7 @@ console.log(metadata.countries)
 Find a country by its code.
 
 ```ts
-findCountryByCode(code: string): Country | undefine
+findCountryByCode(code: string): Country | undefined
 ```
 
 ```ts
