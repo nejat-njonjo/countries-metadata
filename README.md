@@ -18,7 +18,54 @@ This data is stored in `countries_metadata.json` and can be utilized in various 
 
 ## Usage
 
-To use the country metadata:
+In your nodejs project:
+
+An array containing metadata about various countries.
+
+```ts
+import * as metadata from 'countries_metadata'
+
+console.log(metadata.countries)
+```
+
+Find a country by its code.
+
+```ts
+findCountryByCode(code: string): Country | undefine
+```
+
+```ts
+import * as metadata from 'countries_metadata'
+
+const country = metadata.findCountryByCode('MW')
+```
+
+Get a country by its name.
+
+```ts
+getCountryByName(name: string): Country | undefined
+```
+
+```ts
+import * as metadata from 'countries_metadata'
+
+const country = metadata.findCountryByCode('Malawi')
+```
+
+Find countries in a specific continent.
+
+```ts
+findCountriesByContinent(continent: string): Country[]
+```
+
+```ts
+import * as metadata from 'countries_metadata'
+
+const country = metadata.findCountriesByContinent('Africa')
+```
+
+To use the country metadata in your other projects:
+
 1. Copy or download the `countries_metadata.json` file from this repository.
 2. Incorporate the data into your application or project as needed.
 
