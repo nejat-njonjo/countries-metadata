@@ -1,4 +1,4 @@
-# countries_metadata
+# countries-metadata
 
 List of countries containing country code, currency, dial code, continent, capital, and flags.
 
