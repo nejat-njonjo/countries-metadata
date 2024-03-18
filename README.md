@@ -23,7 +23,7 @@ In your nodejs project:
 An array containing metadata about various countries.
 
 ```ts
-import * as metadata from 'countries_metadata'
+import * as metadata from 'countries-metadata'
 
 console.log(metadata.countries)
 ```
@@ -35,7 +35,7 @@ findCountryByCode(code: string): Country | undefined
 ```
 
 ```ts
-import * as metadata from 'countries_metadata'
+import * as metadata from 'countries-metadata'
 
 const country = metadata.findCountryByCode('MW')
 ```
@@ -47,7 +47,7 @@ getCountryByName(name: string): Country | undefined
 ```
 
 ```ts
-import * as metadata from 'countries_metadata'
+import * as metadata from 'countries-metadata'
 
 const country = metadata.findCountryByCode('Malawi')
 ```
@@ -59,7 +59,7 @@ findCountriesByContinent(continent: string): Country[]
 ```
 
 ```ts
-import * as metadata from 'countries_metadata'
+import * as metadata from 'countries-metadata'
 
 const country = metadata.findCountriesByContinent('Africa')
 ```
