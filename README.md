@@ -16,6 +16,16 @@ The purpose of this repository is to provide a detailed list of country metadata
 
 This data is stored in `countries_metadata.json` and can be utilized in various applications that require country-related information.
 
+## Installation
+npm
+```sh
+npm install countries-metadata
+```
+pnpm
+```sh
+pnpm add countries-metadata
+```
+
 ## Usage
 
 In your nodejs project:
